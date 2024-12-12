@@ -1,0 +1,271 @@
+
+:root {
+  --today-color: #ffcc00; 
+  --selected-color: #007bff; 
+}
+
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+.calendar-header {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.calendar-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.calendar-button {
+  margin: 0 10px;
+  padding: 1px 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #0a0a5a;
+  color: white;
+}
+
+.calendar-button:hover {
+  background-color: #ddd;
+}
+
+/* Calendar Grid */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.calendar-day-header {
+  font-weight: bold;
+  text-align: center;
+}
+
+.calendar-empty {
+  visibility: hidden;
+}
+
+.calendar-day {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Highlight today's date */
+.current-day {
+  background-color: var(--today-color);
+  font-weight: bold;
+  color: white;
+}
+
+/* Highlight selected date */
+.selected-day {
+  background-color: var(--selected-color);
+  font-weight: bold;
+  color: white;
+}
+
+.calendar-day:hover {
+  background-color: #f0f0f0;
+}
+
+/* Sidebar */
+.event-sidebar {
+  position: fixed;
+  left: 20px;
+  top: 50px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  background-color: #fff;
+  max-height: 400px;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+.event-sidebar.open {
+  display: block;
+}
+
+.event-sidebar h3 {
+  margin-top: 0;
+}
+
+.event-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.event-sidebar li {
+  margin-bottom: 10px;
+  padding: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h3 {
+  margin-top: 0;
+}
+
+.modal-content label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.modal-content input,
+.modal-content textarea,
+.modal-content select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal-content button {
+  padding: 10px 15px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #ddd;
+}
+
+.sidebar-button {
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  background: blue;
+  color: white;
+  padding: 7px
+}
+
+.sidebar-button:hover {
+  background-color: #ddd;
+}
+/* Sidebar event list */
+.event-sidebar li {
+  margin-bottom: 10px;
+  padding: 5px;
+  border-bottom: 1px solid #eee;
+  border-left: 5px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.event-sidebar li:hover {
+  background-color: #f9f9f9;
+}
+
+.event-sidebar li.work {
+  border-left: 5px solid #4CAF50; 
+}
+
+.event-sidebar li.personal {
+  border-left: 5px solid #FF9800;
+}
+
+.event-sidebar li.other {
+  border-left: 5px solid #2196F3; 
+}
+
+
+.event-actions{
+  display: flex;
+  justify-content: end;
+}
+.CalDelete{
+  padding: 1px 5px;
+  border: none;
+  background: red;
+  color: white;
+  border-radius: 3px;
+  font-size: 12px;
+  text-align: center;
+}
+.CalEdit{
+  padding: 1px 5px;
+    margin-right: 5px;
+    border: none;
+    background: #366236;
+    color: white;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+}
+.download-btns{
+  display: flex;
+  align-items: center;
+}
+.export-button{
+  margin-left: 20px;
+  height: 25px;
+  background: aquamarine;
+  border: none;
+  border-radius: 2px;
+}
+.Save-btn{
+  background: blue;
+  color: white;
+  padding: 7px;
+}
+.Cancel-btn{
+  background: red;
+  color: white;
+  padding: 7px;
+}
